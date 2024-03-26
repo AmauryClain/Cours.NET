@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 public interface Pilotable
 {
-    public void Moove();
+    public void Move2();
 }

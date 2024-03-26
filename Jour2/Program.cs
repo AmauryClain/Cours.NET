@@ -51,7 +51,7 @@ public class Dragon : Animal, Pilotable
         Console.WriteLine(Name + " sleep");
     }
 
-    public void Moove()
+    public void Move2()
     {
         Console.WriteLine(Name + " Moove from Pilotable");
     }
@@ -62,9 +62,6 @@ public class Dragon : Animal, Pilotable
     public Dragon(String name)
     {
         Name = name;
-        Move();
-        Sleep();
-        Moove();
     }
 }
 
@@ -74,5 +71,8 @@ class Program
     {
         Dragon dragon = new Dragon("GOGOLE");
         Griffin griffin = new Griffin("GROS GOGOLE");
+        dragon.Move2();
+        dragon.Move();
+        dragon.Sleep();
     }
 }
