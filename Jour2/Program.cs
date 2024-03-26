@@ -1,37 +1,72 @@
 ﻿using System;
 
-public class Animal
+public abstract class Animal
 {
-    public string Name;
+    private string _name;
+    public string Name { get { return _name; } protected set { _name = value; } }
     
-    public void Move()
+    public virtual void Move()
     {
         Console.WriteLine("Move");
     }
 
-    public void Sleep()
+    public virtual void Sleep()
     {
         Console.WriteLine("Sleep");
     }
 
-    public Animal()
+}
+
+public class Griffin : Animal
+{
+    public override void Move()
     {
-        this.Name = "";
+        Console.WriteLine(Name + " Move");
     }
-    public Animal(String Name)
+    public new void Sleep()
+    {
+        Console.WriteLine(Name + " sleep");
+    }
+    public Griffin()
+    {
+
+    }
+
+    public Griffin(string Name)
     {
         this.Name = Name;
         this.Move();
         this.Sleep();
     }
+}
 
-
+public class Dragon : Animal
+{
+    public override void Move()
+    {
+        Console.WriteLine(Name + " Move");
+    }
+    public new void Sleep()
+    {
+        Console.WriteLine(Name + " sleep");
+    }
+    public Dragon()
+    {
+        Name = "Nom par défaut";
+    }
+    public Dragon(String name)
+    {
+        Name = name;
+        this.Move();
+        this.Sleep();
+    }
 }
 
 class Program
 {
     static void Main(string[] args)
     {
-        Animal sandwich = new Animal("Chat");
+        Dragon dragon = new Dragon("GOGOLE");
+        Griffin griffin = new Griffin("GROS GOGOLE");
     }
 }
