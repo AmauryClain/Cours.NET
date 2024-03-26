@@ -40,7 +40,7 @@ public class Griffin : Animal
     }
 }
 
-public class Dragon : Animal
+public class Dragon : Animal, Pilotable
 {
     public override void Move()
     {
@@ -50,6 +50,11 @@ public class Dragon : Animal
     {
         Console.WriteLine(Name + " sleep");
     }
+
+    public void Moove()
+    {
+        Console.WriteLine(Name + " Moove from Pilotable");
+    }
     public Dragon()
     {
         Name = "Nom par défaut";
@@ -57,8 +62,9 @@ public class Dragon : Animal
     public Dragon(String name)
     {
         Name = name;
-        this.Move();
-        this.Sleep();
+        Move();
+        Sleep();
+        Moove();
     }
 }
 
